@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/w3.css">
+    <title>Show Data</title>
+</head>
+<body>
+       <div class="w3-container">
+       <h3>{{ place.name }}</h3>
+       <img src="{{ place.picture }}" width="1000" height="500""><br>
+       <div class="w3-container w3-blue">
+          <h2>Update new place</h2>
+       </div>
+       <form class="w3-container" method="post" action="/update_place/{{ place.id }}">
+           <p>
+             <label for="picture">Set a new name</label>
+             <input class="w3-input" type="text" name="name">
+           </p>
+           <p>
+             <label for="picture">Set a new picture</label>
+             <input class="w3-input" type="text" name="picture">
+           </p>
+           <p>
+             <label for="WebLink">Set a new Web link</label>
+             <input class="w3-input" type="text" name="WebLink">
+           </p>
+
+           <input type="submit">
+       </form>
+       </div>
+</body>
+</html>
