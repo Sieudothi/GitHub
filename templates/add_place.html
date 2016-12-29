@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="../static/w3.css">
+
+    <title>Register</title>
+</head>
+<body>
+    <!--add place -->
+    <form class="w3-form w3-container " method="post" action="{{ url_for("add_place") }}">
+        <div class="w3-container w3-indigo w3-margin-bottom">
+            <h2>Have your own wonderful place? Fell free to add that place to our Blog.</h2>
+        </div>
+        <label for="Your place is">Your place is</label><br>
+        <input class="w3-input" type="text" name="Your place is"> <br>
+        <label for="Give a picture">Give us a picture</label><br>
+        <input class="w3-input" type="url" name="Give a picture"><br>
+        <label for="Link to a web page">Link to a web page</label><br>
+        <input class="w3-input" type="url" name="Link to a web page">
+        <button type="submit" class="w3-btn w3-btn-block w3-padding-12 w3-dark-grey">Add</button>
+    </form>
+</body>
+</html>
