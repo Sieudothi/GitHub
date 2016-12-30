@@ -63,11 +63,11 @@ class PlaceRes(Resource):
     def put(self, place_id):
         args = parser.parse_args()
         name = args["name"]
-        desc = args["desc"]
-        img = args["img"]
+        picture = args["picture"]
+        WebLink = args["WebLink"]
         Place_list = place.objects
         found_place = Place_list.with_id(place_id)
-        found_place.update(set__name=name, set__desc=desc, set__img=img)
+        found_place.update(set__name = name, set__picture = picture, set__WebLink = WebLink)
         return json.loads(found_place.to_json())
 
 api.add_resource(PlaceListRes,"/api/place/")
