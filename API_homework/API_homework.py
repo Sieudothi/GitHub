@@ -49,24 +49,24 @@ class PlaceListRes(Resource):
         return json.loads(placePost.to_json()), 200
 
 class PlaceRes(Resource):
-    def get(self, hrc_id):
+    def get(self, place_id):
         Place_list= place.objects
-        placeGot = Place_list.with_id(hrc_id)
+        placeGot = Place_list.with_id(place_id)
         return json.loads(placeGot.to_json())
 
-    def delete(self, hrc_id):
+    def delete(self, place_id):
         Place_list = place.objects
-        placeDeleted =  Place_list.with_id(hrc_id)
+        placeDeleted =  Place_list.with_id(place_id)
         placeDeleted.delete()
         return {"code": 1, "status": "OK"}
 
-    def put(self, hrc_id):
+    def put(self, place_id):
         args = parser.parse_args()
         name = args["name"]
         desc = args["desc"]
         img = args["img"]
         Place_list = place.objects
-        found_place = Place_list.with_id(hrc_id)
+        found_place = Place_list.with_id(place_id)
         found_place.update(set__name=name, set__desc=desc, set__img=img)
         return json.loads(found_place.to_json())
 
