@@ -1,0 +1,14 @@
+.page-content{
+    padding: 80px ;
+}
+
+.card{
+
+    max-height: 300px;
+    padding: 20px;
+
+}
+
+.img-preview {
+    width: 100%;
+}

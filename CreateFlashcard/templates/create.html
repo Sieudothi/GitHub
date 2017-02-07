@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Flashcard</title>
+    <link rel="stylesheet" href="../../Flashcard/static/coppy-part/css/bootstrap.css">
+    <link rel="stylesheet" href="../static/create.css">
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+
+
+</head>
+<body>
+    <div id="card" class="container page-content">
+        <div class="card">
+            <div class="face front">
+              <input class="form-control" id="image" type="file">#}
+              <img class="img-preview" src="#" alt="your image"/>
+              <br>
+              <br>
+              <input type="text" class="form-control" placeholder="Word">
+            </div>
+            <div class="face back">
+              <div class="form-group">
+                 <input type="text" class="form-control" placeholder="Word">
+              </div>
+            </div>
+        </div>
+        <br>
+        <div class="pull-left">
+             <button type="submit" class="btn btn-success btn-large">Done</button>
+             <button type="button" class="btn btn-success btn-large">Lib+</button>
+             <button type="button" class="btn btn-success btn-large">Dic+</button>
+        </div>
+    </div>
+
+
+</body>
+<script type="application/javascript">
+    function readURL(input) {
+
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imgsrc').attr('src', e.target.result);
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+    $("#image").change(function(){
+        readURL(this);
+    });
+
+</script>
+</html>
